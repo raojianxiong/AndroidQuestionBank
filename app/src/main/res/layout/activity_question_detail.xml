@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg" >
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/questiont_toolBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:background="@color/actionbar_bg">
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_below="@id/questiont_toolBar"
+        android:id="@+id/quest_title2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16.0dip"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:padding="16dip"
+        android:textColor="@color/question_titlt"
+        android:textSize="16.0sp" />
+
+    <LinearLayout
+        android:id="@+id/quest_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/quest_title2" >
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv_ask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quest_item_container"
+        android:layout_marginTop="16.0dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="答案"
+                android:textColor="@color/question_titlt"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/question_ask"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="12.0dip"
+                android:padding="16dp"
+                android:textColor="@color/title"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/question_info_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/answer_footbar"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/question_toolbar_prev"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:drawablePadding="5.0dip"
+            android:drawableTop="@mipmap/answer_footicon01"
+            android:gravity="center_horizontal"
+            android:paddingTop="6.0dip"
+            android:text="上一题"
+            android:textColor="@color/toolbar_text"
+            android:textSize="10.0sp" />
+
+        <TextView
+            android:id="@+id/question_toolbar_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:drawablePadding="5.0dip"
+            android:drawableTop="@drawable/ic_favo_selector"
+            android:gravity="center_horizontal"
+            android:paddingTop="6.0dip"
+            android:text="收藏"
+            android:textColor="@color/toolbar_text"
+            android:textSize="10.0sp" />
+
+        <TextView
+            android:id="@+id/question_toolbar_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:drawablePadding="5.0dip"
+            android:drawableTop="@mipmap/answer_footicon04"
+            android:gravity="center_horizontal"
+            android:paddingTop="6.0dip"
+            android:text="下一题"
+            android:textColor="@color/toolbar_text"
+            android:textSize="10.0sp" />
+    </LinearLayout>
+
+</RelativeLayout>

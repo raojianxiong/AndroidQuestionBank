@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/actionbar_bg">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/quest_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/ic_arrow_back_white_24dp" />
+
+        <TextView
+            android:id="@+id/quest_title"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@id/quest_image"
+            android:text="JAVA"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:cacheColorHint="@android:color/transparent">
+
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
