@@ -237,7 +237,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
             });
         }else{
             RequestParams params = new RequestParams("http://115.29.136.118:8080/web-question/app/mng/store?method=add");
-            params.addBodyParameter("userId",user_id+"'");
+            params.addBodyParameter("userId",user_id+"");
             params.addBodyParameter("questionId",itemId+"");
             x.http().post(params, new Callback.CommonCallback<String>() {
                 @Override
@@ -260,7 +260,7 @@ public class QuestionDetailActivity extends AppCompatActivity {
 
                 @Override
                 public void onError(Throwable ex, boolean isOnCallback) {
-
+                    ex.printStackTrace();
                 }
 
                 @Override

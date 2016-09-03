@@ -32,7 +32,7 @@ public class PreUtils {
         String[] s = new String[2];
         SharedPreferences sp = context.getSharedPreferences("login",Context.MODE_PRIVATE);
         s[0] = sp.getString("username",null);
-        s[1] = sp.getString("pwd","null");
+        s[1] = sp.getString("pwd",null);
         return s;
     }
     //清除密码账号缓存

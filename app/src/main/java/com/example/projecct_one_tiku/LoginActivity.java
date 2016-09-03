@@ -129,9 +129,10 @@ public class LoginActivity extends AppCompatActivity {
         }else{
             String user_name = s[0];
             String pwd = s[1];
-//            loginIn(user_name,pwd);有延迟,直接跳转吧
-            startActivity(new Intent(this,MainActivity.class));
-            finish();
+            Toast.makeText(LoginActivity.this, "正在登录....请稍后", Toast.LENGTH_SHORT).show();
+            loginIn(user_name,pwd);//有延迟,直接跳转吧
+//            startActivity(new Intent(this,MainActivity.class));
+//            finish();
 
         }
     }
