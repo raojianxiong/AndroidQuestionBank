@@ -2,11 +2,15 @@ package com.example.projecct_one_tiku;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView register_account;
     private SingleInstance instance;
     private AlertDialog show;
+    private PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
      * 登录
      */
     private void loginIn(final String name, final String password){
-        showDialog();
+//        showDialog();
+        showPop();
         RequestParams params = new RequestParams("http://115.29.136.118:8080/web-question/app/login");
         params.addBodyParameter("username",name);
         params.addBodyParameter("password",password);
@@ -114,7 +120,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinished() {
-                       show.dismiss();
+//                       show.dismiss();
+                    popupWindow.dismiss();
                 }
             });
     }
@@ -133,5 +140,12 @@ public class LoginActivity extends AppCompatActivity {
         View view = View.inflate(this,R.layout.dialog,null);
         builder.setView(view);
         show = builder.show();
+    }
+
+    private void showPop(){
+        View view = View.inflate(this,R.layout.dialog,null);
+        popupWindow = new PopupWindow(view,400,400,true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.showAtLocation((ViewGroup)findViewById(android.R.id.content), Gravity.CENTER,0,0);
     }
 }
