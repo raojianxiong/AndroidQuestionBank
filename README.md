@@ -1,2 +1,2 @@
 # AndroidQuestionBank
-this is the first smll project in september.
+this is the first small project in september.
