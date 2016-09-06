@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         x.view().inject(this);
         instance = SingleInstance.newInstance();
 
-        loginNow();
+
     }
     @Event(value = {R.id.btn_login,R.id.forget_password,R.id.register_account},type = View.OnClickListener.class)
     private void onClick(View view){
@@ -121,19 +121,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(this,RegisterActivity.class));
     }
 
-    //判断是否登陆过，直接登陆
-    private void loginNow(){
-        String[]  s = PreUtils.getLogin(this);
-        if(s == null||s[0]==null||s[1] == null){
-            return;
-        }else{
-            String user_name = s[0];
-            String pwd = s[1];
-            Toast.makeText(LoginActivity.this, "正在登录....请稍后", Toast.LENGTH_SHORT).show();
-            loginIn(user_name,pwd);//有延迟,直接跳转吧
-//            startActivity(new Intent(this,MainActivity.class));
-//            finish();
 
-        }
-    }
 }
