@@ -162,8 +162,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                invalidateOptionsMenu();
-
+                    drawerView.setClickable(true);
             }
         };
         mDrawerToggle.syncState();

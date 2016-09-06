@@ -1,5 +1,6 @@
 package com.example.projecct_one_tiku;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     @ViewInject(R.id.register_account)
     private TextView register_account;
     private SingleInstance instance;
+    private AlertDialog show;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
      * 登录
      */
     private void loginIn(final String name, final String password){
+        showDialog();
         RequestParams params = new RequestParams("http://115.29.136.118:8080/web-question/app/login");
         params.addBodyParameter("username",name);
         params.addBodyParameter("password",password);
@@ -110,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 @Override
                 public void onFinished() {
-
+                       show.dismiss();
                 }
             });
     }
@@ -121,5 +125,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(this,RegisterActivity.class));
     }
 
-
+/**
+ * 对话框
+ */
+    private void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = View.inflate(this,R.layout.dialog,null);
+        builder.setView(view);
+        show = builder.show();
+    }
 }
