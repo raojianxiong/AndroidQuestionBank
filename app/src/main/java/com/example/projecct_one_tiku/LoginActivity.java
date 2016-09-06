@@ -144,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showPop(){
         View view = View.inflate(this,R.layout.dialog,null);
-        popupWindow = new PopupWindow(view,400,400,true);
+        popupWindow = new PopupWindow(view,200,200,true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
         popupWindow.showAtLocation((ViewGroup)findViewById(android.R.id.content), Gravity.CENTER,0,0);
     }
