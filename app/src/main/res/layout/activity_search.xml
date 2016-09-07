@@ -32,7 +32,7 @@
             android:layout_marginLeft="10.0dip"
             android:layout_marginRight="10.0dip"
             android:layout_weight="1"
-            android:background="@mipmap/input_search_bg"
+            android:background="@drawable/input_search_bg"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:inputType="text"
